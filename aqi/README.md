@@ -1,8 +1,20 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Global Air Quality Database 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Back end is flask using python and frontend is react 
+
+things that need installing: - 	git lfs install - if pulling from git hub
+
+  Anacoda 
+  creat flask env 
+ make sure these are installed in your env: sqlalchemy, flask-sqlalchemy, mysql, sqlite, flask-cors, ipywidgets, nbconvert, notebook (jupyter notebook), nbformat, pandas 
+  
+  after installing. applying click the play/arrow button then click open with jupyter notebook 
+
+  then run server in last cell 
+  after that is running on port 5101 open vs code, make sure nvm and npm is installed
+  run npm and get port 3000 
+
+
