@@ -1,4 +1,3 @@
-// src/components/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css'; 
@@ -9,8 +8,8 @@ function Home() {
     <div className="home-container">
       <div className="bg-video">
         <video autoPlay muted loop className="bg-video__content">
-          <source src={`${process.env.PUBLIC_URL}/earth.mp4`} type="video/mp4" />
-          Your browser is not supported!:/
+          <source src={`${process.env.PUBLIC_URL}/3129724-uhd_3840_2160_30fps.mp4`} type="video/mp4" />
+          Your browser is not supported! :/
         </video>
       </div>
       <div className="center-container">

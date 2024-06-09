@@ -4,7 +4,7 @@ const ParametersTable = () => {
   const [parameters, setParameters] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5100/json/location/1/parameters')
+    fetch('http://127.0.0.1:5101/json/parameters')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

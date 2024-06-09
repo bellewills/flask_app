@@ -4,7 +4,7 @@ const LocationsTable = () => {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5100/json/locations')
+    fetch('http://127.0.0.1:5101/json/locations')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

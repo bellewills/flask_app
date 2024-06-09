@@ -1,13 +1,14 @@
-// src/components/MeasurementsTable.js
 import React, { useState, useEffect } from 'react';
 
-// MeasurementsTable component
 const MeasurementsTable = () => {
   const [measurements, setMeasurements] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [allDataLoaded, setAllDataLoaded] = useState(false);
 
-  // Fetch data from the API when the component mounts
-  useEffect(() => {
-    fetch('http://127.0.0.1:5100/json/location/1/measurements')
+  const fetchMeasurements = (page) => {
+    setLoading(true);
+    fetch(`http://127.0.0.1:5101/json/location/1/measurements?page=${page}&per_page=100`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -15,16 +16,32 @@ const MeasurementsTable = () => {
         return response.json();
       })
       .then(data => {
-        console.log('Fetched measurements:', data);
-        setMeasurements(data.data);
+        if (data.data.length === 0) {
+          setAllDataLoaded(true);
+        } else {
+          setMeasurements(prevMeasurements => [...prevMeasurements, ...data.data]);
+        }
+        setLoading(false);
       })
-      .catch(error => console.error('Error fetching measurements:', error));
-  }, []);
+      .catch(error => {
+        console.error('Error fetching measurements:', error);
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    if (!allDataLoaded) {
+      fetchMeasurements(page);
+    }
+  }, [page]);
+
+  const handleLoadMore = () => {
+    setPage(prevPage => prevPage + 1);
+  };
 
   return (
     <div>
       <h1>Measurements</h1>
-      {/* Render the table with measurements data */}
       <table>
         <thead>
           <tr>
@@ -55,6 +72,10 @@ const MeasurementsTable = () => {
           )}
         </tbody>
       </table>
+      {loading && <p>Loading...</p>}
+      {!loading && !allDataLoaded && (
+        <button onClick={handleLoadMore}>Load More</button>
+      )}
     </div>
   );
 };
