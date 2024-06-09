@@ -33,7 +33,7 @@ const MeasurementsTable = () => {
     if (!allDataLoaded) {
       fetchMeasurements(page);
     }
-  }, [page]);
+  }, [page, allDataLoaded]); // Include allDataLoaded in the dependency array
 
   const handleLoadMore = () => {
     setPage(prevPage => prevPage + 1);
