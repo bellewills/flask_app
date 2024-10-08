@@ -86,12 +86,12 @@ nav ul li {
 .button-link {
   display: block;
   padding: 15px 25px;  /* Increased padding for larger buttons */
-  background-color: #63c9e8;  /* Set to the same blue as Home link */
+  background-color: rgba(99, 201, 232, 0.6);  /* Set to the same blue as Home link */
   border: 2px solid white;  /* White border around button */
   color: transparent;  /* Transparent button text */
-  -webkit-text-stroke: 2px white;  /* White outline for the text */
+  -webkit-text-stroke: 1px white;  /* White outline for the text */
   text-stroke: 2px white;  /* Fallback for non-webkit browsers */
-  border-radius: 5px;
+  border-radius: 1px;
   text-decoration: none;
   font-size: 1.5em;  /* Increase font size */
 }
