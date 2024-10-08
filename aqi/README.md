@@ -18,3 +18,5 @@ things that need installing: - 	git lfs install - if pulling from git hub
   run npm and get port 3000 
 
 
+MAKE SURE YOU CD IN CORRECT PLACE AND ARE IN aqi-frontend THEN DO npm start IN TERMINAL TO START THE LOCAL SERVER TO GAIN WEBSITE ACCESS 
+

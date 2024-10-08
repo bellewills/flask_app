@@ -7,14 +7,19 @@ body {
   text-align: center; /* Center align text */
 }
 
+/* Title (Air Quality Database) */
 h1 {
-  color: #343a40;
-  font-size: 3em; /* Adjusted font size */
-  margin-top: 60px; /* Adjusted margin */
+  font-size: 3em;
+  margin-top: 50px;  /* Adjust to move the title down */
+  color: #63c9e8;  /* Set the title text to blue */
+  -webkit-text-stroke: 1px white;  /* Create the white outline */
+  text-stroke: 1px white;  /* Fallback for non-webkit browsers */
+  text-align: center;  /* Keep the text centered */
 }
 
+/* Links and navigation */
 a {
-  color: #63c9e8;
+  color: #63c9e8; /* Same as the "Home" link */
   text-decoration: none;
   font-size: 1.5em; /* Increase the font size for links */
 }
@@ -46,16 +51,24 @@ nav ul li {
 
 .home-link {
   position: fixed;
-  top: 20px;
+  top: 40px;  /* Slightly moved down */
   left: 20px;
 }
 
+/* Titles for other pages (non-home) */
+.main-content h1, .content-title {
+  color: #63c9e8;  /* Set title colour to blue */
+  -webkit-text-stroke: 1px white;  /* Add a white stroke */
+  text-stroke: 1px white;
+}
+
+/* Homepage Button Styles */
 .center-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 80px); /* Adjust to account for the height of the nav */
   position: relative;
   z-index: 1;
 }
@@ -72,29 +85,38 @@ nav ul li {
 
 .button-link {
   display: block;
-  padding: 10px 20px;
-  background-color: #63c9e8;
-  color: white;
+  padding: 15px 25px;  /* Increased padding for larger buttons */
+  background-color: #63c9e8;  /* Set to the same blue as Home link */
+  border: 2px solid white;  /* White border around button */
+  color: transparent;  /* Transparent button text */
+  -webkit-text-stroke: 2px white;  /* White outline for the text */
+  text-stroke: 2px white;  /* Fallback for non-webkit browsers */
   border-radius: 5px;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.5em;  /* Increase font size */
 }
 
 .button-link:hover {
-  background-color: #3c798b;
+  background-color: rgba(99, 201, 232, 0.6);  /* Darker semi-transparent blue on hover */
+  color: transparent;  /* Keep the text transparent on hover */
+  -webkit-text-stroke: 1px white;  /* Maintain thicker white text outline */
+
 }
 
-/* Main content */
+/* Main content (tables) */
 .main-content {
   padding: 60px 20px; /* Adjusted padding */
 }
 
 .content-title {
   font-size: 2em;
+  color: #63c9e8;  /* Set title colour to blue */
+  -webkit-text-stroke: 1px white;  /* Add a white stroke to make the text more readable */
+  text-stroke: 1px white;
   margin-bottom: 20px;
 }
 
-/* Table styles */
+/* Table styles for data pages */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -119,7 +141,7 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-/* Background video styles */
+/* Background video styles for homepage */
 .home-container {
   position: relative;
   height: 100vh;
@@ -127,12 +149,13 @@ tr:nth-child(even) {
 }
 
 .bg-video {
-  position: absolute;
+  position: fixed;  /* Ensures full-screen coverage */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;  /* Full viewport width */
+  height: 100vh;  /* Full viewport height */
   z-index: -1;
+  object-fit: cover;  /* Ensures the video covers the entire screen */
   overflow: hidden;
 }
 
